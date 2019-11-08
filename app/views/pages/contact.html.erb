@@ -1,3 +1,19 @@
 <% content_for :title do %>Contact<% end %>
 <h3>Contact</h3>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, porro repudiandae repellendus, inventore possimus odio laudantium qui voluptate, architecto nostrum! Repudiandae laborum consequuntur dicta quasi sed eaque quos repellat?</p>
+<div class="form">
+  <%= form_with(url: contact_path) do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name, autofocus: true %>
+    <br/>
+    <br/>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+    <br/>
+    <br/>
+    <%= form.label 'message' %>
+    <%= form.text_area :content, size: '40x5' %>
+    <br/>
+    <br/>
+    <%= form.submit 'Submit', class: 'submit' %>
+  <% end %>
+</div>
